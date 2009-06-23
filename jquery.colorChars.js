@@ -1,8 +1,9 @@
 /*****
- jquery.colorChars.js -- Andrew Buntine
+ jquery.colorChars.js -- Andrew Buntine (info@andrewbuntine.com)
 
  Version: 0.1
  Requires: JQuery 1.2+
+ Released under the MIT license.
 
  A very simple JQuery plugin to color blocks of characters in a set of elements. It accepts
  a hash-map object like so:
