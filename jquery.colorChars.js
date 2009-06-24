@@ -7,11 +7,12 @@
 
  A very simple JQuery plugin to color blocks of characters in a set of elements. It accepts
  a hash-map object like so:
- $('div pre').colorChars({
-   '#' : '#ccc55e',
-   '@' : '#999aaa',
-   '$' : 'green
- });
+
+   $('div pre').colorChars({
+     '#' : '#ccc55e',
+     '@' : '#999aaa',
+     '$' : 'green'
+   });
 *****/
 
 (function($) {
