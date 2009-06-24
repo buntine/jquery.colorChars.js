@@ -11,20 +11,27 @@
    $('div pre').colorChars({
      '#' : '#ccc55e',
      '@' : '#999aaa',
-     '$' : 'green'
+     '$' : 'green',
+     'L' : '#333333'
    });
 *****/
 
 (function($) {
   $.fn.colorChars = function(map) {
     return this.each(function() {
-      for ( character in map ) {
-        if ( map.hasOwnProperty(character) ) {
-          chars = new RegExp("(\\" + character + "+)", "g");
-          span = "<span style=\"color:" + map[character] + ";\">$1</span>";
+      for ( key in map ) {
+        if ( map.hasOwnProperty(key) ) {
+          chars = new RegExp("(" + extractChar(key) + "+)", "g");
+          span = "<span style=\"color:" + map[key] + ";\">$1</span>";
           $(this).html($(this).html().replace(chars, span));
         }
       }
     });
   };
+
+  // Private function to extract the first character and escape it.
+  function extractChar(text) {
+    character = text.charAt(0);
+    return (/\w/.test(character)) ? character : "\\" + character;
+  }
 })(jQuery);
